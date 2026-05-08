@@ -46,6 +46,24 @@ What this adds:
 
 ---
 
+### 4. `additional-system-tuning.md` — Post-Install System Tuning
+
+Covers system-level hardening and quality-of-life improvements to apply after a working install. Complements any of the guides above.
+
+**Covers:** SSD maintenance · firewall · backups · mirrors · DNS over TLS · thermal management · CPU scaling  
+**Good for:** Finalizing a production-ready system after the base install and Secure Boot setup
+
+Key additions:
+- `fstrim.timer` for NVMe health
+- `ufw` firewall with default-deny incoming
+- `restic` for encrypted, deduplicated data backups
+- DNS over TLS via `systemd-resolved` with Quad9 + DNSSEC
+- `thermald` for Intel thermal management
+- `auto-cpufreq` for laptop battery and performance balance
+- `earlyoom` to prevent system freezes under memory pressure
+
+---
+
 ## Recommended Path
 
 ```
@@ -55,11 +73,16 @@ New machine or VM?
 │   └─ Yes → arch-luks-btrfs-guide.md
 │   └─ No  → arch-luks-install-guide.md
 │
-└─ Add Secure Boot after first successful boot?
-    └─ Yes → arch-luks-uki-secureboot-guide.md
+├─ Add Secure Boot after first successful boot?
+│   └─ Yes → arch-luks-uki-secureboot-guide.md
+│
+└─ Finalize the system?
+    └─ Always → additional-system-tuning.md
 ```
 
 The UKI + Secure Boot guide is written as a **post-installation step** — get a working encrypted system first, then layer on the signed boot chain.
+
+Once the system is fully operational, apply `additional-system-tuning.md` regardless of which base guide you followed.
 
 ---
 
