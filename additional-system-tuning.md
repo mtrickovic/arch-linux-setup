@@ -195,3 +195,14 @@ Back up the entire directory to an external drive:
 ```bash
 sudo cp -r /var/lib/sbctl/ /run/media/youruser/USBNAME/sbctl-backup/
 ```
+
+---
+
+## 🖥 i3 Desktop Utilities & UI Stack
+
+Core desktop utilities for an i3wm-based Arch Linux setup.
+
+### Install Packages
+
+```bash
+sudo pacman -S dunst polybar rofi xss-lock i3lock ttf-jetbrains-mono-nerd
