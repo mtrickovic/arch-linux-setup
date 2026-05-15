@@ -205,4 +205,6 @@ Core desktop utilities for an i3wm-based Arch Linux setup.
 ### Install Packages
 
 ```bash
-sudo pacman -S dunst polybar rofi xss-lock i3lock ttf-jetbrains-mono-nerd
+sudo pacman -S dunst polybar rofi xss-lock i3lock ttf-jetbrains-mono-nerd \
+ttf-neslo-nerd
+```
