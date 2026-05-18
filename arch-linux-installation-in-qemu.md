@@ -44,5 +44,8 @@ qemu-img create -f qcow2 img1.qcow2 4G
                      -m 8G \
                      -smp 4 \
                      -drive file=img1.cow,format=qcow2 \
+                     -vga qxl \
                      -bios /usr/share/edk2/x64/OVMF.fd
   ```
+
+> Note: Install `xf86-video-qxl`.
