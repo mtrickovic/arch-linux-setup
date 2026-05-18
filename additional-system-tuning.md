@@ -198,6 +198,19 @@ sudo cp -r /var/lib/sbctl/ /run/media/youruser/USBNAME/sbctl-backup/
 
 ---
 
+## Minimal Xorg Stack
+
+Install the core Xorg server and utilities:
+
+```bash
+sudo pacman -S xorg-server xorg-xinit xorg-xrandr xterm
+```
+
+- `xorg-server` - the actual X server
+- `xorg-xinit`  - provides `startx`
+- `xorg-xrandr` - display configuration utility
+- `alacritty`   - terminal package
+
 ## 🖥 i3 Desktop Utilities & UI Stack
 
 Core desktop utilities for an i3wm-based Arch Linux setup.
@@ -206,5 +219,5 @@ Core desktop utilities for an i3wm-based Arch Linux setup.
 
 ```bash
 sudo pacman -S dunst polybar rofi xss-lock i3lock ttf-jetbrains-mono-nerd \
-ttf-neslo-nerd
+ttf-meslo-nerd
 ```
