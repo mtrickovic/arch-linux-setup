@@ -48,4 +48,18 @@ qemu-img create -f qcow2 img1.qcow2 4G
                      -bios /usr/share/edk2/x64/OVMF.fd
   ```
 
+## Additionaly, Final Command Using NVME Drive
+
+```sh
+qemu-system-x86_64 \
+    -accel kvm \
+    -m 8G \
+    -smp 4 \
+    -vga qxl \
+    -drive file=img1.qcow2,format=qcow2,if=none,id=nvme0 \
+    -device nvme,drive=nvme0,serial=deadbeef \
+    -bios /usr/share/edk2/x64/OVMF.4m.fd \
+    -cdrom archlinux-x86_64.iso
+```
+
 > Note: Install `xf86-video-qxl`.
