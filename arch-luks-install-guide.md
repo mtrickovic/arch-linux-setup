@@ -181,6 +181,7 @@ pacstrap -K /mnt base linux-hardened linux-firmware \
   nano vim \
   man-db man-pages \
   cryptsetup \
+  dhcpcd \
   intel-ucode  # Use amd-ucode for AMD CPUs
 ```
 
@@ -206,7 +207,7 @@ arch-chroot /mnt
 
 ### Set Timezone
 ```bash
-ln -sf /usr/share/zoneinfo/Europe/Vienna /mnt/etc/localtime
+ln -sf /usr/share/zoneinfo/Europe/Vienna /etc/localtime
 hwclock --systohc
 ```
 
