@@ -32,6 +32,14 @@ main() {
     -drive "if=pflash,format=raw,readonly=on,file=${OVMF_CODE}"
     -drive "if=pflash,format=raw,file=${OVMF_VARS}"
 
+    # Host <-> VM
+    -netdev tap,id=net0,ifname=tap0,script=no,downscript=no
+    -device virtio-net-pci,netdev=net0
+
+    # Internet
+    -netdev user,id=net1
+    -device virtio-net-pci,netdev=net1
+
     -cdrom "$ISO"
   )
 
